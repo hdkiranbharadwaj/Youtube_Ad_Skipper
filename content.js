@@ -1,4 +1,4 @@
-let seet = 1;
+let playing = 1;
 function isAdPlaying() {
   const adOverlay = document.querySelector(".ytp-ad-player-overlay");
   return adOverlay !== null;
@@ -19,12 +19,12 @@ function clickSkipButton() {
 }
 setInterval(() => {
   if (isAdPlaying()) {
-    seet = 0;
+    playing = 0;
     adjustVideoSpeed(8);
   } else {
-    if (seet === 0) {
+    if (playing === 0) {
       adjustVideoSpeed(1);
-      seet = 1;
+      playing = 1;
     }
   }
 }, 100);
